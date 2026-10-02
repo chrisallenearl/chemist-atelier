@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b2131">
+  <meta name="description" content="Explore a possible research direction and assess its fit with Chemist Atelier's three research sub-clusters.">
+  <title>Find Your Research Direction — Chemist Atelier</title>
+  <style>
+    :root { --navy:#0b2131; --ink:#102a3a; --muted:#526979; --cream:#f6f7f5; --white:#fff; --line:#d6e0e3; --gold:#d7a34c; --green:#167a5b; --blue:#1971a4; --red:#a45548; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--cream); font:400 1rem/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    a { color:inherit; }
+    button,input,textarea { font:inherit; }
+    button { cursor:pointer; }
+    .container { width:min(1040px,calc(100% - 2rem)); margin-inline:auto; }
+    .header { background:#fff; border-bottom:1px solid var(--line); }
+    .header .container { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .brand { font-weight:800; letter-spacing:.025em; text-decoration:none; display:inline-flex; gap:.7rem; align-items:center; }
+    .mark { width:32px; height:32px; color:var(--gold); background:var(--navy); border-radius:7px; display:grid; place-items:center; font-size:1.28rem; line-height:1; }
+    .header nav { display:flex; gap:1.5rem; font-size:.92rem; font-weight:650; }
+    .header nav a { text-decoration:none; }
+    .header nav a:hover { text-decoration:underline; text-underline-offset:.3em; }
+    .hero { background:var(--navy); color:#f7fbfc; padding:clamp(3rem,6vw,5.2rem) 0; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.15em; font-weight:800; font-size:.78rem; }
+    .hero .eyebrow { color:#e6bc72; }
+    h1,h2,h3,p { margin-top:0; }
+    h1,h2 { font-family:Georgia,"Times New Roman",serif; font-weight:500; letter-spacing:-.035em; }
+    h1 { font-size:clamp(2.8rem,6vw,5.2rem); line-height:1.08; max-width:15ch; margin:.55rem 0 1rem; }
+    .hero p { max-width:44rem; color:#d9e6eb; font-size:1.16rem; }
+    .steps { display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1.8rem; }
+    .steps a { text-decoration:none; border:1px solid #587080; padding:.5rem .8rem; border-radius:99px; color:#f3f8f9; font-weight:650; }
+    .steps a:hover { background:#244153; }
+    main { padding:2.4rem 0 5rem; }
+    .intro { max-width:48rem; color:var(--muted); margin-bottom:1.7rem; }
+    .stage { background:#fff; border:1px solid var(--line); border-top:5px solid var(--gold); padding:clamp(1.25rem,3vw,2.6rem); margin-bottom:2rem; box-shadow:0 10px 32px rgba(15,40,55,.045); scroll-margin-top:1rem; }
+    .stage.cluster-stage { border-top-color:var(--green); }
+    .stage h2 { font-size:clamp(2.1rem,4vw,3.3rem); margin:.35rem 0 .65rem; }
+    .stage > p { color:var(--muted); max-width:47rem; }
+    fieldset { border:0; margin:1.65rem 0 0; padding:0; min-width:0; }
+    legend { font-weight:750; font-size:1.09rem; line-height:1.35; padding:0; }
+    .hint { color:var(--muted); font-size:.9rem; margin:.35rem 0 .8rem; }
+    .choices { display:flex; flex-wrap:wrap; gap:.55rem; }
+    .choice { position:relative; display:inline-flex; align-items:center; gap:.55rem; border:1px solid #bdcbd1; border-radius:7px; padding:.63rem .78rem; background:#fff; line-height:1.3; cursor:pointer; }
+    .choice:has(input:checked) { border-color:var(--green); background:#e8f3ef; }
+    .choice input { accent-color:var(--green); margin:0; width:1.05rem; height:1.05rem; flex:none; }
+    .prompt { margin:1.4rem 0 0; display:block; font-weight:700; }
+    textarea { width:100%; min-height:85px; margin-top:.4rem; padding:.75rem; border:1px solid #a9bac3; border-radius:6px; resize:vertical; color:var(--ink); background:#fff; }
+    .scale-group { margin-top:1.8rem; }
+    .scale-group h3 { font-size:1.17rem; margin:0 0 .45rem; }
+    .scale-group > p { color:var(--muted); margin:0 0 1rem; }
+    .scale-row { padding:1rem 0; border-top:1px solid var(--line); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:.8rem 1.4rem; align-items:center; }
+    .scale-row .question { font-weight:650; margin:0; }
+    .scale-row .sub { font-size:.86rem; font-weight:400; color:var(--muted); display:block; margin-top:.25rem; }
+    .scale-options { display:flex; gap:.3rem; flex-wrap:wrap; align-items:center; }
+    .scale-options label { display:grid; place-items:center; min-width:43px; min-height:43px; border:1px solid #b9c8cf; border-radius:6px; cursor:pointer; font-weight:700; }
+    .scale-options label:has(input:checked) { background:var(--navy); border-color:var(--navy); color:#fff; }
+    .scale-options input { position:absolute; opacity:0; width:1px; height:1px; }
+    .scale-options label:focus-within { outline:3px solid #dfac56; outline-offset:2px; }
+    .range-labels { color:var(--muted); font-size:.82rem; display:flex; justify-content:space-between; max-width:252px; margin:.3rem 0 0 auto; }
+    .actions { display:flex; gap:.8rem; flex-wrap:wrap; align-items:center; margin-top:1.8rem; }
+    .button { border:0; border-radius:5px; background:var(--gold); color:#142b37; padding:.8rem 1.2rem; font-weight:800; text-decoration:none; }
+    .button:hover { background:#e8b963; }
+    .button.secondary { border:1px solid #9aadb6; background:#fff; color:var(--ink); }
+    .button.secondary:hover { background:#e8eef0; }
+    .error { color:#9f3f36; font-weight:700; margin:1rem 0 0; }
+    .result { margin-top:1.6rem; padding:1.35rem 1.5rem; background:#e8eef0; border-left:4px solid var(--blue); scroll-margin-top:1rem; }
+    .result[hidden] { display:none; }
+    .result h3 { font-family:Georgia,"Times New Roman",serif; font-size:1.65rem; font-weight:500; margin-bottom:.7rem; }
+    .result p:last-child { margin-bottom:0; }
+    .result ul { margin:.5rem 0 0; padding-left:1.4rem; }
+    .score-head { display:flex; align-items:baseline; gap:1rem; flex-wrap:wrap; }
+    .score-head strong { font-size:2.6rem; line-height:1; font-variant-numeric:tabular-nums; }
+    .score-list { display:grid; gap:.9rem; margin:1.25rem 0; }
+    .score-line { display:grid; grid-template-columns:145px 1fr 55px; gap:.65rem; align-items:center; }
+    .score-line meter { width:100%; height:1.3rem; accent-color:var(--green); }
+    .score-line strong { text-align:right; font-variant-numeric:tabular-nums; }
+    .caution { color:#714917; background:#fff4da; border-left:4px solid #d7a34c; padding:.75rem 1rem; }
+    .small { color:var(--muted); font-size:.88rem; }
+    footer { background:#081b29; color:#abc0c9; padding:1.8rem 0; font-size:.88rem; }
+    footer .container { display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+    :focus-visible { outline:3px solid #dfac56; outline-offset:3px; }
+    @media(max-width:720px) { .scale-row { grid-template-columns:1fr; } .range-labels { margin-left:0; } .score-line { grid-template-columns:98px 1fr 48px; font-size:.88rem; } .header nav { gap:.8rem; font-size:.82rem; } }
+    @media(max-width:400px) { .brand { font-size:.88rem; } .header nav a:first-child { display:none; } }
+    @media print { .header,.hero .steps,.actions,footer { display:none; } body { background:#fff; } .hero { color:#000; background:#fff; padding:0; } .hero p,.hero .eyebrow { color:#000; } main { padding:0; } .stage { border:0; box-shadow:none; padding:0; } fieldset,.intro,.scale-group,.prompt,textarea,.error,.stage > p { display:none; } .result[hidden] { display:none; } }
+  </style>
+</head>
+<body>
+  <header class="header"><div class="container"><a class="brand" href="index.html"><span class="mark" aria-hidden="true">◬</span>Chemist Atelier</a><nav aria-label="Site navigation"><a href="index.html#research">Research</a><a href="index.html#contact">Contact</a></nav></div></header>
+  <div class="hero"><div class="container"><div class="eyebrow">Student research pathways</div><h1>Find your research direction.</h1><p>Reflect on what keeps you curious, then examine how a possible thesis could fit Chemist Atelier. The first part is descriptive; the second part gives a provisional score to discuss with an adviser.</p><div class="steps"><a href="#self-discovery">01 · Self-discovery</a><a href="#atelier-fit">02 · Chemist Atelier fit</a></div></div></div>
+  <main class="container">
+    <p class="intro">You can explore without entering a name or contact details. Your answers stay in this browser session; the page does not submit or store them.</p>
+    <section class="stage" id="self-discovery" aria-labelledby="self-title">
+      <div class="eyebrow">Part 1 · Self-discovery</div>
+      <h2 id="self-title">What kind of work draws you in?</h2>
+      <p>Choose what feels true today. The conclusion offers possible directions for further conversation, not a test of talent.</p>
+      <fieldset><legend>What could keep you working through a difficult project?</legend><p class="hint">Select up to two.</p>
+        <div class="choices" id="drivers">
+          <label class="choice"><input type="checkbox" value="curiosity">Finding out how something works</label>
+          <label class="choice"><input type="checkbox" value="making">Making a useful tool or process</label>
+          <label class="choice"><input type="checkbox" value="enterprise">Creating commercial potential</label>
+          <label class="choice"><input type="checkbox" value="community">Helping people meet a need</label>
+          <label class="choice"><input type="checkbox" value="heritage">Understanding or preserving heritage</label>
+          <label class="choice"><input type="checkbox" value="environment">Addressing an environmental problem</label>
+        </div>
+      </fieldset>
+      <fieldset><legend>Which activities would you enjoy doing regularly?</legend><p class="hint">Select any that apply.</p>
+        <div class="choices" id="activities">
+          <label class="choice"><input type="checkbox" value="experiments">Designing experiments</label>
+          <label class="choice"><input type="checkbox" value="building">Building and troubleshooting</label>
+          <label class="choice"><input type="checkbox" value="materials">Making or testing materials</label>
+          <label class="choice"><input type="checkbox" value="data">Analyzing data or coding</label>
+          <label class="choice"><input type="checkbox" value="stories">Investigating objects and their stories</label>
+          <label class="choice"><input type="checkbox" value="people">Learning from users or communities</label>
+        </div>
+      </fieldset>
+      <fieldset><legend>What interests outside chemistry might inspire a question?</legend><p class="hint">Select any. These are prompts, not automatic research assignments.</p>
+        <div class="choices" id="interests">
+          <label class="choice"><input type="checkbox" value="art">Painting, design, or crafts</label>
+          <label class="choice"><input type="checkbox" value="music">Music and sound</label>
+          <label class="choice"><input type="checkbox" value="scifi">Science fiction or technology</label>
+          <label class="choice"><input type="checkbox" value="business">Entrepreneurship or pitch shows</label>
+          <label class="choice"><input type="checkbox" value="nature">Nature and sustainability</label>
+          <label class="choice"><input type="checkbox" value="history">Local history or cultural practices</label>
+        </div>
+        <label class="prompt" for="other-interest">Another interest you would like to connect to research (optional)</label><textarea id="other-interest" maxlength="240" placeholder="For example, cooking, textiles, photography, or something entirely different"></textarea>
+      </fieldset>
+      <fieldset><legend>Which subjects or skills feel like strengths, or something you want to develop?</legend><p class="hint">Select any. You do not need to be skilled in them already.</p>
+        <div class="choices" id="skills">
+          <label class="choice"><input type="checkbox" value="analytical">Analytical chemistry</label>
+          <label class="choice"><input type="checkbox" value="organic">Organic chemistry</label>
+          <label class="choice"><input type="checkbox" value="inorganic">Inorganic chemistry</label>
+          <label class="choice"><input type="checkbox" value="physical">Physical chemistry or thermodynamics</label>
+          <label class="choice"><input type="checkbox" value="math">Mathematics and statistics</label>
+          <label class="choice"><input type="checkbox" value="coding">Coding or electronics</label>
+          <label class="choice"><input type="checkbox" value="writing">Writing and historical research</label>
+          <label class="choice"><input type="checkbox" value="fabrication">Fabrication or design</label>
+        </div>
+      </fieldset>
+      <div class="scale-group"><h3>How do you prefer to work?</h3><p>Choose from 1 (not much at present) to 5 (very much). These responses guide the description; they are not scored.</p>
+        <div class="scale-row" data-scale="explore" data-min="1" data-max="5"><p class="question">I enjoy explaining something that is not yet understood.</p><div><div class="scale-options" role="radiogroup" aria-label="Enjoy explaining unknowns"></div><div class="range-labels"><span>Not much</span><span>Very much</span></div></div></div>
+        <div class="scale-row" data-scale="prototype" data-min="1" data-max="5"><p class="question">I enjoy making and improving a working prototype.</p><div><div class="scale-options" role="radiogroup" aria-label="Enjoy making prototypes"></div><div class="range-labels"><span>Not much</span><span>Very much</span></div></div></div>
+        <div class="scale-row" data-scale="collaborate" data-min="1" data-max="5"><p class="question">I enjoy defining a problem with people who may use the result.</p><div><div class="scale-options" role="radiogroup" aria-label="Enjoy working with potential users"></div><div class="range-labels"><span>Not much</span><span>Very much</span></div></div></div>
+      </div>
+      <div class="actions"><button class="button" id="discover" type="button">Explore my direction</button></div>
+      <p class="error" id="self-error" role="alert" hidden></p>
+      <div class="result" id="self-result" role="status" aria-live="polite" hidden><h3>Your possible direction</h3><p id="self-summary"></p><ul id="self-prompts"></ul><p class="small">These suggestions reflect your choices. A discussion with a mentor can turn them into testable questions.</p><a class="button" href="#atelier-fit">Continue to Chemist Atelier fit ↓</a></div>
+    </section>
+    <section class="stage cluster-stage" id="atelier-fit" aria-labelledby="atelier-title">
+      <div class="eyebrow">Part 2 · Chemist Atelier</div>
+      <h2 id="atelier-title">How well does a candidate project fit?</h2>
+      <p>Think of one possible thesis while answering. This section scores project readiness and shows which sub-cluster(s) align with its main contribution.</p>
+      <label class="prompt" for="project-idea">Working idea or research question (optional)</label><textarea id="project-idea" maxlength="300" placeholder="For example: Can a low-cost sensor measure ...?"></textarea>
+      <div class="scale-group"><h3>The four conditions</h3><p>Rate each from 0 (no workable route yet) to 4 (demonstrated fit). A 2 means feasible with a defined adjustment or support.</p>
+        <div class="scale-row" data-scale="motivation" data-min="0" data-max="4"><p class="question">I can sustain interest in this specific question through setbacks.</p><div class="scale-options" role="radiogroup" aria-label="Sustained interest in this project"></div></div>
+        <div class="scale-row" data-scale="capability" data-min="0" data-max="4"><p class="question">I can do the required work with current skills, training, and supervision.<span class="sub">Rate the available learning pathway, not innate intelligence or grades alone.</span></p><div class="scale-options" role="radiogroup" aria-label="Skills and learning support"></div></div>
+        <div class="scale-row" data-scale="time" data-min="0" data-max="4"><p class="question">The work can reach a defensible result within my available time.</p><div class="scale-options" role="radiogroup" aria-label="Available time"></div></div>
+        <div class="scale-row" data-scale="resources" data-min="0" data-max="4"><p class="question">Equipment, materials, funding, and access have a workable path.<span class="sub">Include shared resources, collaborators, and frugal alternatives.</span></p><div class="scale-options" role="radiogroup" aria-label="Usable resources"></div></div>
+      </div>
+      <div class="scale-group"><h3>Research quality</h3><p>Rate each from 0 to 4 using the same anchors.</p>
+        <div class="scale-row" data-scale="value" data-min="0" data-max="4"><p class="question">The knowledge or result has a clear reason to matter.</p><div class="scale-options" role="radiogroup" aria-label="Problem value"></div></div>
+        <div class="scale-row" data-scale="gap" data-min="0" data-max="4"><p class="question">I can identify a specific unanswered question or useful gap.</p><div class="scale-options" role="radiogroup" aria-label="Research gap"></div></div>
+        <div class="scale-row" data-scale="method" data-min="0" data-max="4"><p class="question">I can describe measurements, comparisons, or evidence that will answer it.</p><div class="scale-options" role="radiogroup" aria-label="Testable method"></div></div>
+        <div class="scale-row" data-scale="support" data-min="0" data-max="4"><p class="question">The required adviser, collaborators, or technical support are accessible.</p><div class="scale-options" role="radiogroup" aria-label="Mentorship and collaboration"></div></div>
+      </div>
+      <div class="scale-group"><h3>Sub-cluster alignment</h3><p>For each direction, rate your interest and how central its contribution would be to this project. A project may fit more than one.</p>
+        <div class="scale-row" data-scale="artificerInterest" data-min="0" data-max="4"><p class="question">ARTIFICER · I want to develop or combine tools for chemistry.</p><div class="scale-options" role="radiogroup" aria-label="Interest in ARTIFICER"></div></div>
+        <div class="scale-row" data-scale="artificerCore" data-min="0" data-max="4"><p class="question">ARTIFICER · A chemistry tool or interdisciplinary instrument is the main contribution.<span class="sub">Examples: multispectral or gas sensors, DIY goniometers, splash measurement.</span></p><div class="scale-options" role="radiogroup" aria-label="ARTIFICER as main contribution"></div></div>
+        <div class="scale-row" data-scale="primeInterest" data-min="0" data-max="4"><p class="question">PRIME · I want to investigate polymers or fibers.</p><div class="scale-options" role="radiogroup" aria-label="Interest in PRIME"></div></div>
+        <div class="scale-row" data-scale="primeCore" data-min="0" data-max="4"><p class="question">PRIME · Polymer or fiber chemistry, properties, or processing are the main contribution.<span class="sub">Synthetic, biobased, and natural polymer work all belong here.</span></p><div class="scale-options" role="radiogroup" aria-label="PRIME as main contribution"></div></div>
+        <div class="scale-row" data-scale="kampilanInterest" data-min="0" data-max="4"><p class="question">KAMPILAN · I want to investigate materials and cultural heritage.</p><div class="scale-options" role="radiogroup" aria-label="Interest in KAMPILAN"></div></div>
+        <div class="scale-row" data-scale="kampilanCore" data-min="0" data-max="4"><p class="question">KAMPILAN · Heritage chemistry and its context are the main contribution.<span class="sub">Dyes and colors are current examples, not the limit of the sub-cluster.</span></p><div class="scale-options" role="radiogroup" aria-label="KAMPILAN as main contribution"></div></div>
+      </div>
+      <fieldset><legend>What resource mechanism is most realistic?</legend><p class="hint">Choose the pathway available to this project. This guides the recommendation; it does not add or remove points.</p><div class="choices" id="resource-path"><label class="choice"><input type="radio" name="resourcePath" value="frugal">Existing or shared tools; very limited funds</label><label class="choice"><input type="radio" name="resourcePath" value="focused">Some funding for focused tests</label><label class="choice"><input type="radio" name="resourcePath" value="extended">Funding for broader development and validation</label><label class="choice"><input type="radio" name="resourcePath" value="unknown">Not established yet</label></div></fieldset>
+      <fieldset><legend>Have safety, ethical, and facility requirements been considered for this idea?</legend><p class="hint">This is a discussion checkpoint, not part of the numeric score.</p><div class="choices" id="requirements"><label class="choice"><input type="radio" name="requirements" value="yes">Yes, with a plan</label><label class="choice"><input type="radio" name="requirements" value="unsure">Not yet / unsure</label><label class="choice"><input type="radio" name="requirements" value="no">I know of a barrier</label></div></fieldset>
+      <div class="actions"><button class="button" id="assess" type="button">See my fit and scores</button><button class="button secondary" id="reset-all" type="button">Start over</button></div>
+      <p class="error" id="fit-error" role="alert" hidden></p>
+      <div class="result" id="fit-result" role="status" aria-live="polite" hidden>
+        <h3>Project assessment</h3><p id="idea-label"></p>
+        <div class="score-head"><strong id="readiness-score"></strong><span>Project readiness / 100</span></div>
+        <p id="readiness-message"></p><p id="weakest-factor"></p><p id="resource-message"></p>
+        <h3>Possible sub-cluster alignment</h3><p id="cluster-summary"></p><div class="score-list" id="cluster-scores"></div>
+        <p class="small">Alignment = 70% central contribution + 30% interest. Readiness = 15 points each for the four conditions and 10 points each for the four research quality checks. These are conversation aids, not a measure of intelligence or an admission decision.</p>
+        <p class="caution" id="requirements-message"></p>
+        <div class="actions"><button class="button secondary" type="button" onclick="window.print()">Print or save results</button></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container"><span>© Chemist Atelier</span><span>Research through chemistry, design, and material inquiry.</span></div></footer>
+  <script>
+    "use strict";
+    const $$ = (selector, root=document) => Array.from(root.querySelectorAll(selector));
+    const $ = (selector) => document.querySelector(selector);
+    const selected = (id) => $$('#'+id+' input:checked').map(input => input.value);
+    const rating = (key) => {
+      const checked = document.querySelector('input[name="'+key+'"]:checked');
+      return checked ? Number(checked.value) : null;
+    };
+    const labelMap = {
+      curiosity:'discovery and explanation', making:'practical tool or process development',
+      enterprise:'a potential product or service', community:'work shaped with potential beneficiaries',
+      heritage:'cultural materials and their histories', environment:'environmental questions'
+    };
+    const activityMap = {
+      experiments:'experimental comparison', building:'prototyping and troubleshooting',
+      materials:'material preparation and testing', data:'data analysis or coding',
+      stories:'material and historical interpretation', people:'work with intended users'
+    };
+    const interestMap = {
+      art:'art, design, or craft materials', music:'sound, recordings, or performance',
+      scifi:'emerging tools and imagined technologies', business:'real-world user needs',
+      nature:'natural materials or environmental systems', history:'local objects and practices'
+    };
+    const skillsMap = {
+      analytical:'analytical chemistry', organic:'organic chemistry', inorganic:'inorganic chemistry',
+      physical:'physical chemistry', math:'mathematics or statistics', coding:'coding or electronics',
+      writing:'writing or historical inquiry', fabrication:'fabrication or design'
+    };
+    const clusterNames = {artificer:'ARTIFICER Lab',prime:'PRIME Lab',kampilan:'KAMPILAN'};
+    const clusterDescriptions = {
+      artificer:'tools for chemistry through mechatronics and other interdisciplinary combinations',
+      prime:'polymer and fiber chemistry, processing, properties, and applications',
+      kampilan:'chemical study of cultural heritage, its materials, methods, and context'
+    };
+    $$('.scale-row').forEach(row => {
+      const holder = row.querySelector('.scale-options');
+      const key = row.dataset.scale;
+      for (let number=Number(row.dataset.min); number<=Number(row.dataset.max); number++) {
+        const label=document.createElement('label');
+        const input=document.createElement('input');
+        input.type='radio'; input.name=key; input.value=String(number);
+        label.append(input,document.createTextNode(String(number)));
+        holder.append(label);
+      }
+    });
+    $('#drivers').addEventListener('change', event => {
+      if (selected('drivers').length>2) { event.target.checked=false; $('#self-error').textContent='Choose up to two driving reasons.'; $('#self-error').hidden=false; }
+      else $('#self-error').hidden=true;
+    });
+    $('#discover').addEventListener('click', () => {
+      const drivers=selected('drivers'), activities=selected('activities');
+      if (!drivers.length || !activities.length) {
+        $('#self-error').textContent='Choose at least one driving reason and one activity to see your direction.';
+        $('#self-error').hidden=false;
+        $('#self-result').hidden=true;
+        return;
+      }
+      $('#self-error').hidden=true;
+      const driversText=drivers.map(v=>labelMap[v]).join(' and ');
+      $('#self-summary').textContent='You may be drawn to '+driversText+'. Activities you chose—'+activities.map(v=>activityMap[v]).join(', ')+'—suggest ways to investigate a question you care about.';
+      const prompts=[];
+      const interests=selected('interests').map(v=>interestMap[v]);
+      const other=$('#other-interest').value.trim();
+      if (other) interests.push(other);
+      if (interests.length) prompts.push('Possible contexts to explore: '+interests.join(', ')+'. Ask what chemical question connects naturally to one of them.');
+      const skills=selected('skills').map(v=>skillsMap[v]);
+      if (skills.length) prompts.push('Methods or learning paths you selected: '+skills.join(', ')+'.');
+      if (rating('explore')>=4) prompts.push('A discovery-oriented question may suit you: What mechanism, composition, or relationship remains unexplained?');
+      if (rating('prototype')>=4) prompts.push('A design-oriented question may suit you: What tool or process can you build and validate?');
+      if (rating('collaborate')>=4 || drivers.includes('community')) prompts.push('Consider asking intended users or communities to help define the problem and a useful result.');
+      if (drivers.includes('enterprise')) prompts.push('A commercial motivation can guide a user problem, but test scientific merit and feasibility separately.');
+      if (drivers.includes('heritage')) prompts.push('A heritage interest may open questions about materials, practices, change, and interpretation in context.');
+      if (!prompts.length) prompts.push('Try describing one question you would willingly investigate for several weeks, and one method you would like to learn.');
+      const list=$('#self-prompts'); list.replaceChildren();
+      prompts.forEach(value=>{ const li=document.createElement('li'); li.textContent=value; list.append(li); });
+      $('#self-result').hidden=false;
+      $('#self-result').scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    $('#assess').addEventListener('click', () => {
+      const factors=['motivation','capability','time','resources','value','gap','method','support'];
+      const clusterFactors=['artificerInterest','artificerCore','primeInterest','primeCore','kampilanInterest','kampilanCore'];
+      const missing=[...factors,...clusterFactors].filter(key=>rating(key)===null);
+      const requirement=document.querySelector('input[name="requirements"]:checked');
+      const resourcePath=document.querySelector('input[name="resourcePath"]:checked');
+      if (missing.length || !requirement || !resourcePath) {
+        $('#fit-error').textContent='Answer all 0–4 ratings and the two resource and requirements questions to calculate the assessment ('+missing.length+' ratings left).';
+        $('#fit-error').hidden=false;
+        $('#fit-result').hidden=true;
+        return;
+      }
+      $('#fit-error').hidden=true;
+      const weights={motivation:15,capability:15,time:15,resources:15,value:10,gap:10,method:10,support:10};
+      const score=Math.round(factors.reduce((sum,key)=>sum+rating(key)*weights[key]/4,0));
+      const foundations=['motivation','capability','time','resources'];
+      const labels={motivation:'sustained interest',capability:'skills and learning support',time:'available time',resources:'resources',value:'problem value',gap:'research gap',method:'testable method',support:'mentorship'};
+      const low=foundations.filter(key=>rating(key)<2);
+      const weakest=factors.slice().sort((a,b)=>rating(a)-rating(b))[0];
+      const idea=$('#project-idea').value.trim();
+      $('#idea-label').textContent=idea?'Working idea: '+idea:'Assessment of your current project idea';
+      $('#readiness-score').textContent=String(score);
+      let advice=score>=75?(requirement.value==='yes'?'Promising candidate for a short pilot, subject to adviser review.':'Strong on rated factors. Resolve the requirements checkpoint before a pilot.'):score>=60?'Revise one or two weak conditions, then reassess.':'Reshape the project question or compare it with another idea.';
+      if (low.length) advice+=' The four-condition fit needs attention before committing: '+low.map(key=>labels[key]).join(', ')+'.';
+      $('#readiness-message').textContent=advice;
+      $('#weakest-factor').textContent='A useful next discussion is '+labels[weakest]+' (rated '+rating(weakest)+'/4). A smaller scope, training, collaborator, or alternative method may improve the project.';
+      const resourceAdvice={
+        frugal:'Resource pathway: plan a frugal proof of concept using shared tools, a narrow comparison, and a small but defensible validation set.',
+        focused:'Resource pathway: use the available funding for the measurements most critical to the research question.',
+        extended:'Resource pathway: consider broader development and validation, while keeping the core thesis question manageable.',
+        unknown:'Resource pathway: identify actual equipment, funding, materials, and access before fixing the project scope.'
+      };
+      $('#resource-message').textContent=resourceAdvice[resourcePath.value];
+      const alignments=['artificer','prime','kampilan'].map(key=>({key,score:Math.round((.7*rating(key+'Core')+.3*rating(key+'Interest'))*25)})).sort((a,b)=>b.score-a.score);
+      const top=alignments[0], second=alignments[1];
+      const close=top.score-second.score<=12 && second.score>=50;
+      const weakTop=top.score<50;
+      $('#cluster-summary').textContent=weakTop?'No strong alignment yet. Clarify what the thesis will primarily contribute, then discuss where it belongs.':close?'Your idea may bridge '+clusterNames[top.key]+' and '+clusterNames[second.key]+'. Choose a primary home by the thesis’s central research claim.':'The strongest current alignment is '+clusterNames[top.key]+'—'+clusterDescriptions[top.key]+'.';
+      const scoreList=$('#cluster-scores'); scoreList.replaceChildren();
+      alignments.forEach(item=>{
+        const row=document.createElement('div'); row.className='score-line';
+        const name=document.createElement('span'); name.textContent=clusterNames[item.key];
+        const meter=document.createElement('meter'); meter.min=0; meter.max=100; meter.value=item.score; meter.setAttribute('aria-label',clusterNames[item.key]+' alignment');
+        const number=document.createElement('strong'); number.textContent=item.score+'/100';
+        row.append(name,meter,number); scoreList.append(row);
+      });
+      $('#requirements-message').textContent=requirement.value==='yes'?'Continue checking safety, ethics, and access with your adviser before beginning work.':requirement.value==='no'?'A known safety, ethics, or access barrier needs a workable resolution or a different project scope before proceeding.':'Clarify safety, ethics, and facility access with your adviser before committing to this project.';
+      $('#fit-result').hidden=false;
+      $('#fit-result').scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    $('#reset-all').addEventListener('click', () => {
+      $$('input').forEach(input=>{ input.checked=false; });
+      $$('textarea').forEach(input=>{ input.value=''; });
+      ['#self-result','#fit-result','#self-error','#fit-error'].forEach(selector=>{ $(selector).hidden=true; });
+      $('#self-discovery').scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  </script>
+</body>
+</html>
