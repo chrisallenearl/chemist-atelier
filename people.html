@@ -42,11 +42,11 @@
     .cluster-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.2rem; }
     .group-card { --accent:var(--blue); background:#fff; border:1px solid var(--line); border-top:5px solid var(--accent); overflow:hidden; }
     .group-card.kampilan { --accent:var(--red); }
-    .group-card.artificer { --accent:var(--green); grid-column:1 / -1; display:grid; grid-template-columns:minmax(260px,.7fr) 1.3fr; align-items:center; }
+    .group-card.artificer { --accent:var(--green); grid-column:1 / -1; display:grid; grid-template-columns:minmax(300px,.9fr) 1.1fr; align-items:center; }
     .group-card .photo { background:#f4e3dc; }
     .group-card .photo img { width:100%; aspect-ratio:2/3; object-fit:cover; object-position:center top; }
-    .group-card.artificer .photo { background:#f8faf7; padding:2rem; }
-    .group-card.artificer .photo img { aspect-ratio:4/3; object-fit:contain; max-height:350px; }
+    .group-card.artificer .photo { background:#f4e3dc; }
+    .group-card.artificer .photo img { aspect-ratio:2/3; object-fit:cover; object-position:center top; max-height:720px; }
     .group-copy { padding:1.65rem; }
     .group-copy .eyebrow { color:var(--accent); }
     .group-copy h3 { font-size:1.8rem; margin:.35rem 0 .65rem; }
@@ -60,7 +60,7 @@
     footer { background:#081b29; color:#a8c0c9; padding:1.3rem 0; font-size:.85rem; }
     footer .inner { display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
     :focus-visible { outline:3px solid #dfac56; outline-offset:4px; }
-    @media(max-width:780px) { .container { width:min(100% - 2rem,1120px); } .site-header .inner { min-height:72px; } nav { gap:.8rem; } nav a { font-size:.82rem; } nav a:nth-child(2),nav a:nth-child(4) { display:none; } .lead-photo,.cluster-grid,.group-card.artificer { grid-template-columns:1fr; } .group-card.artificer { grid-column:auto; } .group-card.artificer .photo img { max-height:260px; } .mascot-footer .inner { grid-template-columns:1fr 130px; min-height:205px; gap:.5rem; } .mascot-footer img { width:145px; height:185px; } }
+    @media(max-width:780px) { .container { width:min(100% - 2rem,1120px); } .site-header .inner { min-height:72px; } nav { gap:.8rem; } nav a { font-size:.82rem; } nav a:nth-child(2),nav a:nth-child(4) { display:none; } .lead-photo,.cluster-grid,.group-card.artificer { grid-template-columns:1fr; } .group-card.artificer { grid-column:auto; } .group-card.artificer .photo img { max-height:600px; } .mascot-footer .inner { grid-template-columns:1fr 130px; min-height:205px; gap:.5rem; } .mascot-footer img { width:145px; height:185px; } }
   </style>
 </head>
 <body>
@@ -71,7 +71,7 @@
     <section class="clusters" aria-labelledby="clusters-title"><div class="container"><div class="intro"><div class="eyebrow">Meet the sub-clusters</div><h2 id="clusters-title">Distinct specialties, shared standards.</h2><p>Each sub-cluster has its own research identity while contributing knowledge, methods, and tools to the larger atelier.</p></div><div class="cluster-grid">
       <article class="group-card kampilan"><div class="photo"><img src="assets/kampilan-group-charleton.png" alt="KAMPILAN research group with Charleton and the research adviser"></div><div class="group-copy"><div class="eyebrow">KAMPILAN</div><h3>Heritage chemistry</h3><p>KAMPILAN investigates the chemistry of culturally significant materials—including colorants, fibers, coatings, composites, and recording materials—while connecting laboratory evidence with historical and conservation contexts. Charleton joins this inter-university group as its newest member.</p></div></article>
       <article class="group-card prime"><div class="photo"><img src="assets/prime-group.jpeg" alt="PRIME Lab student research group and research adviser"></div><div class="group-copy"><div class="eyebrow">PRIME Lab</div><h3>Polymer research</h3><p>PRIME brings together synthetic, biobased, conductive, and natural polymer research—from synthesis and processing to characterization, composites, filtration, and functional applications.</p></div></article>
-      <article class="group-card artificer"><div class="photo"><img src="assets/artificer-logo.jpeg" alt="ARTIFICER Lab emblem"></div><div class="group-copy"><div class="eyebrow">ARTIFICER Lab</div><h3>Chemistry tools and integrated engineering</h3><p>ARTIFICER develops purpose-built tools for chemistry by combining chemical measurement with electronics, programming, mechatronics, automation, and fabrication.</p><span class="status">Group portrait forthcoming</span></div></article>
+      <article class="group-card artificer"><div class="photo"><img src="assets/artificer-group.jpeg" alt="ARTIFICER Lab student research group and research adviser in laboratory coats"></div><div class="group-copy"><div class="eyebrow">ARTIFICER Lab</div><h3>Chemistry tools and integrated engineering</h3><p>ARTIFICER develops purpose-built tools for chemistry by combining chemical measurement with electronics, programming, mechatronics, automation, and fabrication. The group works across sensing, multispectral instrumentation, modular measurement devices, and laboratory fabrication systems.</p></div></article>
     </div></div></section>
   </main>
   <section class="mascot-footer" aria-label="Chemist Atelier mascot"><div class="container inner"><div><div class="eyebrow">Our laboratory companion</div><h2>Curiosity belongs in the atelier.</h2><p>Our red panda scientist represents the playful curiosity, careful experimentation, and collaborative spirit behind Chemist Atelier.</p></div><img src="assets/mascot.png" alt="Chemist Atelier red panda scientist mascot holding the atelier flask emblem"></div></section>
