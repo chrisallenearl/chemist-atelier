@@ -1,0 +1,350 @@
+{
+  "scope": "46 endpoint statements reviewed for conceptual consistency; targeted source verification, not laboratory validation or an exhaustive validated SOP.",
+  "sources": [
+    "https://www.scribd.com/document/996695579/Qualitative-Analysis-Using-Semimicro-Methods-Gilreath-Esmarch-S-1904-1",
+    "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Confirmatory_Tests"
+  ],
+  "practice": {
+    "targets": [
+      "Ag+",
+      "Cu2+",
+      "Fe3+",
+      "Ni2+",
+      "Ba2+"
+    ],
+    "matrix": "Hypothetical dilute aqueous nitrate salts, acidified with nitric acid. Five target cations, not five total ionic species.",
+    "compatibility": "Chemically reasonable teaching scenario by solubility reasoning; no physical mixture was prepared or experimentally validated. Avoid specifying unverified concentrations.",
+    "caution": "Nitric acid introduces nitrate; nitrate confirmation on this prepared solution cannot prove an independently unknown original anion."
+  },
+  "corrections": [
+    {
+      "id": "C2B-antimony",
+      "text": "Black deposit requires Sn–Ag contact couple; a black deposit alone is insufficient. Gilreath adds NaOCl insolubility discrimination against arsenic."
+    },
+    {
+      "id": "C2B-tin",
+      "text": "Accept white OR gray precipitate, not mandatory visible white-to-gray sequence."
+    },
+    {
+      "id": "C2A-mercury",
+      "text": "White, gray or black endpoints depend on reduction extent; do not reject gray/black simply because transient white was missed."
+    },
+    {
+      "id": "C3B-cobalt",
+      "text": "Gilreath alcoholic reagent gives blue-green junction; Birk acetone variant gives blue liquid. Label protocol variants explicitly; omit cobalt photo for a junction question."
+    },
+    {
+      "id": "C3B-iron",
+      "text": "SCN detects Fe(III) in test portion; oxidizing preparation does not establish original iron oxidation state."
+    },
+    {
+      "id": "C3B-nickel",
+      "text": "Iron masking/removal is necessary when Fe accompanies Ni."
+    },
+    {
+      "id": "A1-arsenite",
+      "text": "Timing is essential: delayed arsenate sulfide can imitate yellow arsenite product. Photograph alone cannot distinguish."
+    },
+    {
+      "id": "A1-phosphate",
+      "text": "Arsenate interference requires specified treatment. A white precipitate is not the yellow positive endpoint."
+    },
+    {
+      "id": "A5-chlorate-nitrite",
+      "text": "Flag both positive results in the same acid-prepared group as a consistency conflict: chlorate and nitrite react."
+    },
+    {
+      "id": "A5-nitrate",
+      "text": "Require nitrite removal and interference control; endpoint is conditional, not unique in untreated mixtures."
+    },
+    {
+      "id": "fluoride",
+      "text": "Keep historical reference-only; no definitive positive branch for current practical identification."
+    }
+  ],
+  "photo_policy": {
+    "p10_2.png": "Chromate intermediate only; NOT blue peroxide endpoint.",
+    "p9_1.png": "Yellow arsenic sulfide, NOT reddish-brown silver arsenate.",
+    "p11_3.png": "Cobalt SCN blue bulk solution, NOT evidence of alcoholic junction. Omit unless variant explicitly explained.",
+    "p7_1.png": "White stage of mercury reduction; cannot demonstrate complete time sequence.",
+    "p9_2.png": "White mercury chloride product in tin test; cannot demonstrate gray stage.",
+    "p14_1.png": "Representative BaSO4 product only; does not establish sulfate provenance or pre/post oxidation.",
+    "p16_1.png": "Representative BaSO4; source reuses Sr2.gif across sulfate discussions. Label representative, not unique composition photograph.",
+    "p11_1.png": "Source identifies Fe-SCN solution; dark exposure looks brown. Do not label precipitate.",
+    "p18_2.png": "Same Fe-SCN product, reagent/unknown roles reversed; label product, not original unknown ion.",
+    "p17_1.png": "Prussian blue from Fe(III)+ferrocyanide.",
+    "p17_2.png": "Turnbull blue from Fe(II)+ferricyanide; same mixed-valence product, colors alone cannot distinguish."
+  },
+  "photo_sources": {
+    "p6_1.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Silver_Ions_(Ag)",
+    "p6_2.png": "https://pages.uoregon.edu/smrandy/topics/preciptopicmain.html",
+    "p6_3.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Mercury_Ions_(Hg_and_Hg)",
+    "p7_1.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Mercury_Ions_(Hg_and_Hg)",
+    "p7_2.png": "https://pages.uoregon.edu/smrandy/topics/preciptopicmain.html",
+    "p7_3.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Bismuth__(Bi)",
+    "p7_4.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Copper_Ions_(Cu)",
+    "p8_1.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Cadmium_Ions_(Cd)",
+    "p9_1.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Arsenic_Ions_(As)",
+    "p9_2.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Tin_Ions_(Sn_Sn)",
+    "p10_1.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Aluminum_Ions_(Al)",
+    "p10_2.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Chromium_Ions_(Cr)",
+    "p11_1.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Iron__(Fe)",
+    "p11_2.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Manganese_Ions_(Mn)",
+    "p11_3.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Cobalt_Ions_(Co)",
+    "p11_4.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Nickel_Ions_(Ni)",
+    "p12_1.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Barium_(Ba)",
+    "p12_2.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Strontium_Ions_(Sr)",
+    "p12_3.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Confirmatory_Tests",
+    "p12_4.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Magnesium_Ions_(Mg)",
+    "p13_1.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Ammonium_Ion_(NH)",
+    "p14_1.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Barium_(Ba)",
+    "p14_2.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Arsenic_Ions_(As)",
+    "p16_1.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Barium_(Ba)",
+    "p16_2.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Barium_(Ba)",
+    "p17_1.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Iron__(Fe)",
+    "p17_2.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Iron__(Fe)",
+    "p18_1.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Silver_Ions_(Ag)",
+    "p18_2.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Iron__(Fe)",
+    "p20_1.png": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Qualitative_Analysis/Characteristic_Reactions_of_Select_Metal_Ions/Characteristic_Reactions_of_Silver_Ions_(Ag)"
+  },
+  "endpoint_inventory": [
+    {
+      "panel": "C1",
+      "question": "Hot-water extract + chromate: yellow PbCrO₄ precipitate?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C1",
+      "question": "Ammonia-treated residue: gray or black material?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C1",
+      "question": "Separated ammoniacal extract + acid: white AgCl returns?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C2A",
+      "question": "Mercury fraction + SnCl₂: white precipitate, then gray/black on further reduction?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C2A",
+      "question": "Lead fraction + chromate: yellow PbCrO₄ precipitate?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C2A",
+      "question": "Bismuth fraction + alkaline stannite: black metal?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C2A",
+      "question": "Copper fraction + excess ammonia: deep-blue liquid?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C2A",
+      "question": "Cadmium fraction after copper interference removal: yellow CdS?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C2B",
+      "question": "Arsenic fraction, oxidized for silver test: reddish-brown silver arsenate?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C2B",
+      "question": "Separated antimony: characteristic black deposit on silver?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C2B",
+      "question": "Tin fraction reduced to Sn(II), then HgCl₂: white-to-gray precipitate?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C3A",
+      "question": "Aluminum fraction + aluminon: red lake associated with hydroxide solid?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C3A",
+      "question": "Chromium fraction after oxidation: acidified peroxide gives transient blue?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C3A",
+      "question": "Separated zinc fraction + sulfide: white ZnS precipitate?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C3B",
+      "question": "Iron test + thiocyanate: deep-red dissolved complex?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C3B",
+      "question": "Manganese test + acidic bismuthate: purple permanganate in the liquid?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C3B",
+      "question": "Cobalt test, iron interference suppressed: blue-green liquid junction?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C3B",
+      "question": "Nickel test + dimethylglyoxime in ammonia: rose-red precipitate?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C4",
+      "question": "Barium fraction: yellow chromate AND compatible yellow-green flame?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C4",
+      "question": "Strontium fraction: sulfate precipitate AND compatible crimson flame?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C4",
+      "question": "Calcium fraction: oxalate precipitate AND compatible brick-red flame?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C4",
+      "question": "Magnesium fraction + magneson: blue lake on hydroxide?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C5",
+      "question": "Sodium test: intense yellow flame clearly above the reagent blank?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C5",
+      "question": "Potassium test: characteristic violet emission, accounting for sodium masking?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "C5",
+      "question": "Original aliquot + alkali and warming: gas turns damp red litmus blue without splashing?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A1",
+      "question": "Original portion + acid: gas with independent CO₂ confirmation after interference exclusion?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A1",
+      "question": "Sulfite fraction, existing sulfate removed: NEW BaSO₄ after oxidation?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A1",
+      "question": "Arsenite fraction in the prescribed acidic sulfide test: immediate yellow As₂S₃?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A1",
+      "question": "Arsenate fraction in prescribed acidic iodide test: iodine liberated?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A1",
+      "question": "Phosphate fraction + acidic molybdate: yellow precipitate?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A1",
+      "question": "Separated oxalate fraction: warm acidic permanganate decolorized?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A1",
+      "question": "Historical fluoride glass-etching test: permanent etched area after washing? REFERENCE ONLY.",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A2",
+      "question": "Sulfate fraction: white barium precipitate persists in the specified acid treatment?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A2",
+      "question": "Chromate fraction: yellow BaCrO₄ returns after dissolution and buffered pH adjustment?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A3",
+      "question": "Sulfide test: liberated gas causes brown/black lead acetate paper stain?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A3",
+      "question": "Ferrocyanide test portion + Fe³⁺: dark-blue precipitate?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A3",
+      "question": "Ferricyanide test portion + Fe²⁺: dark-blue precipitate?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A4",
+      "question": "Thiosulfate test: initially light silver precipitate progressively becomes black?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A4",
+      "question": "Chloride fraction: white AgCl returns after ammoniacal separation and acidification?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A4",
+      "question": "Thiocyanate fraction + Fe³⁺: red dissolved complex?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A4",
+      "question": "Iodide test after oxidation: violet iodine-containing organic phase?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A4",
+      "question": "After iodine interference removal: bromide test gives yellow/orange organic phase?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A5",
+      "question": "Chlorate portion: after initial chloride removal, reduction produces NEW AgCl?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A5",
+      "question": "Prepared borate portion: carminic-acid reagent becomes blue-violet?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A5",
+      "question": "Nitrite portion: prescribed acidic urea reaction evolves gas?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    },
+    {
+      "panel": "A5",
+      "question": "Nitrate portion after nitrite removal: prescribed brown-ring endpoint?",
+      "scope": "Requires isolated fraction, interference treatment and appropriate conditions."
+    }
+  ],
+  "logic_requirements": [
+    "Retain liquid after a positive group precipitation.",
+    "Separate independent portions; do not run all confirmatory reagents in one tube.",
+    "Uncertain and skipped are not negative.",
+    "Negative requires valid controls.",
+    "Invalidate descendant answers after earlier preparation changes.",
+    "Element identification after redox is not original oxidation-state assignment."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "checks": 1551,
+  "passed": true,
+  "endpointEntries": 46,
+  "activeEndpoints": 45,
+  "answerBranches": 180,
+  "caseTargets": 5,
+  "scope": "Tests cover each endpoint answer branch, all answer-to-answer corrections, fraction prerequisite gating, invalidation, restoration, case routing, conflict detection and asset presence. Not an exhaustive enumeration of all multi-test histories or laboratory validation."
+}
